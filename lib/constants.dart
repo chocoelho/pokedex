@@ -1,1 +1,1 @@
-const String APP_NAME = 'Pokédex';
+const String appName = 'Pokédex';
