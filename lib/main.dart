@@ -14,20 +14,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Pokédex'),
+      home: const PokedexHome(title: 'Pokédex'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class PokedexHome extends StatefulWidget {
+  const PokedexHome({super.key, required this.title});
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<PokedexHome> createState() => _PokedexHomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _PokedexHomeState extends State<PokedexHome> {
 
   @override
   Widget build(BuildContext context) {
