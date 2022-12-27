@@ -19,7 +19,7 @@ class PokedexGenerations extends StatelessWidget {
                 future: pokedexGeneration,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    return Text(snapshot.data!.name?? '');
+                    return Text(snapshot.data!.name ?? '');
                   } else if (snapshot.hasError) {
                     return Text('${snapshot.error}');
                   }
