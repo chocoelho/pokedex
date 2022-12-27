@@ -7,17 +7,15 @@ class PokedexGenerations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(constants.generationsRouteName)
-      ),
+      appBar: AppBar(title: const Text(constants.generationsRouteName)),
       body: Center(
         child: ElevatedButton(
           child: const Text('Go back Home'),
           onPressed: () {
             Navigator.pop(context);
           },
-        )
-      )
+        ),
+      ),
     );
   }
 }
