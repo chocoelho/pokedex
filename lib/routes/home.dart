@@ -20,8 +20,7 @@ class PokedexHome extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const PokedexGenerations()),
+                    MaterialPageRoute(builder: (context) => const PokedexGenerations()),
                   );
                 },
               ),
@@ -32,8 +31,7 @@ class PokedexHome extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const PokedexGames()),
+                    MaterialPageRoute(builder: (context) => const PokedexGames()),
                   );
                 },
               ),
