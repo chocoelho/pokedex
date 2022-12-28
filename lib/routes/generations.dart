@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/constants.dart' as constants;
-import 'package:pokedex/serializers/generations.dart';
+import 'package:pokedex/models/generations.dart';
 import 'package:pokedex/services/generations.dart';
 
 class PokedexGenerations extends StatelessWidget {
