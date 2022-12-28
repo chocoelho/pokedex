@@ -8,34 +8,41 @@ class PokedexGenerations extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late Future<PokedexGeneration> pokedexGeneration = fetchGeneration();
+    late Future<List<PokedexGeneration>> pokedexGenerations = fetchGenerationsList();
     return Scaffold(
       appBar: AppBar(title: const Text(constants.generationsRouteName)),
       body: Center(
-        child: ListView(
-          children: [
-            Center(
-              child: FutureBuilder<PokedexGeneration>(
-                future: pokedexGeneration,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return Text(snapshot.data!.name ?? '');
-                  } else if (snapshot.hasError) {
-                    return Text('${snapshot.error}');
-                  }
-                  return const CircularProgressIndicator();
-                },
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                flex: 8,
+                child: FutureBuilder<List<PokedexGeneration>>(
+                  future: pokedexGenerations,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) return Text('${snapshot.error}');
+                    return snapshot.hasData
+                        ? ListView.builder(
+                            itemCount: snapshot.data?.length,
+                            itemBuilder: (context, index) => Card(
+                              child: Text('${snapshot.data?[index].name}'),
+                            ),
+                          )
+                        : CircularProgressIndicator();
+                  },
+                ),
               ),
-            ),
-            Center(
-              child: ElevatedButton(
-                child: const Text('Go back Home'),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+              Expanded(
+                child: ElevatedButton(
+                  child: const Text('Go back Home'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
