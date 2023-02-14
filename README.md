@@ -1,16 +1,7 @@
 # pokedex
 
-A personal Pokédex
+A personal Pokédex for study purposes
 
-## Getting Started
+## Project state
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[device-2023-02-13-235117.webm](https://user-images.githubusercontent.com/3460435/218626770-a9eae04b-385f-451b-a8c4-a0054512c2d7.webm)
