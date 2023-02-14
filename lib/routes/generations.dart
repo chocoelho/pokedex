@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:pokeapi/model/game/generation.dart';
 import 'package:pokedex/constants.dart' as constants;
-import 'package:pokedex/models/generations.dart';
 import 'package:pokedex/services/generations.dart';
 
-class PokedexGenerations extends StatelessWidget {
-  const PokedexGenerations({Key? key}) : super(key: key);
+class Generations extends StatelessWidget {
+  const Generations({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    late Future<List<PokedexGeneration>> pokedexGenerations = fetchGenerationsList();
+    late Future<List<Generation>> pokedexGenerations = fetchGenerationsList();
+
     return Scaffold(
       appBar: AppBar(title: const Text(constants.generationsRouteName)),
       body: Center(
@@ -18,10 +19,11 @@ class PokedexGenerations extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 flex: 8,
-                child: FutureBuilder<List<PokedexGeneration>>(
+                child: FutureBuilder<List<Generation>>(
                   future: pokedexGenerations,
                   builder: (context, snapshot) {
                     if (snapshot.hasError) return Text('${snapshot.error}');
+
                     return snapshot.hasData
                         ? ListView.builder(
                             itemCount: snapshot.data?.length,
@@ -29,7 +31,7 @@ class PokedexGenerations extends StatelessWidget {
                               child: Text('${snapshot.data?[index].name}'),
                             ),
                           )
-                        : CircularProgressIndicator();
+                        : const CircularProgressIndicator();
                   },
                 ),
               ),

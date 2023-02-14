@@ -3,14 +3,14 @@ import 'package:pokedex/routes/home.dart';
 import 'package:pokedex/constants.dart' as constants;
 
 void main() {
-  runApp(const PokedexApp());
+  runApp(const Main());
 }
 
-class PokedexApp extends StatelessWidget {
-  const PokedexApp({Key? key}) : super(key: key);
+class Main extends StatelessWidget {
+  const Main({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: PokedexHome(), title: constants.appName);
+    return const MaterialApp(home: Home(), title: constants.appName);
   }
 }

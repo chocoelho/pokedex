@@ -3,8 +3,8 @@ import 'package:pokedex/routes/games.dart';
 import 'package:pokedex/routes/generations.dart';
 import 'package:pokedex/constants.dart' as constants;
 
-class PokedexHome extends StatelessWidget {
-  const PokedexHome({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class PokedexHome extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const PokedexGenerations()),
+                    MaterialPageRoute(builder: (context) => const Generations()),
                   );
                 },
               ),
@@ -31,7 +31,7 @@ class PokedexHome extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const PokedexGames()),
+                    MaterialPageRoute(builder: (context) => const Games()),
                   );
                 },
               ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/constants.dart' as constants;
 
-class PokedexGames extends StatelessWidget {
-  const PokedexGames({Key? key}) : super(key: key);
+class Games extends StatelessWidget {
+  const Games({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
